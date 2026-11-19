@@ -203,7 +203,7 @@
       if (reduced) { el.textContent = end + suf; return; }
       const t0 = performance.now(), dur = 1400;
       (function step(now) {
-        const p = Math.min(1, (now - t0) / dur), v = Math.round(end * (1 - Math.pow(1 - p, 3)));
+        const p = Math.max(0, Math.min(1, (now - t0) / dur)), v = Math.round(end * (1 - Math.pow(1 - p, 3)));
         el.textContent = v + suf; if (p < 1) requestAnimationFrame(step);
       })(t0);
     });
@@ -375,7 +375,7 @@
     { g: 'Links', t: 'Open Telegram', run: () => open('https://t.me/qencreatives', '_blank', 'noopener') },
     { g: 'Links', t: 'Open Instagram', run: () => open('https://www.instagram.com/qen_creatives/', '_blank', 'noopener') },
     { g: 'Links', t: 'Open LinkedIn', run: () => open('https://www.linkedin.com/in/yeabkal-dereje-082b32408/', '_blank', 'noopener') },
-    { g: 'Links', t: 'View source on GitHub', run: () => open('https://github.com/yeabkaldereje/yeabkaldereje.github.io', '_blank', 'noopener') }
+    { g: 'Links', t: 'View source on GitHub', run: () => open('https://github.com/yeabkaldereje/YeabkalDereje', '_blank', 'noopener') }
   ];
   let shown = [], sel = 0;
   function renderPal() {
